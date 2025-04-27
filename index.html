@@ -6,7 +6,7 @@
     <title>North Florida Asset Recovery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -26,7 +26,7 @@
                     <li><a href="#coverage">Coverage Area</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#schedule" class="btn btn-outline">Schedule Now</a></li>
+                    <li><a href="https://scheduler.cleardata.io" target="_blank" class="btn btn-outline">Schedule Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,7 +39,7 @@
                 <h1>North Florida Asset Recovery</h1>
                 <p>Professional asset recovery services throughout Northeast Florida. Fast, reliable, and trusted.</p>
                 <a href="#services" class="btn">Our Services</a>
-                <a href="#schedule" class="btn">Schedule Appointment</a>
+                <a href="https://scheduler.cleardata.io" target="_blank" class="btn">Schedule Appointment</a>
             </div>
         </div>
     </section>
@@ -48,6 +48,7 @@
     <section id="services" class="services">
         <div class="container">
             <h2>Our Services</h2>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
@@ -100,7 +101,7 @@
             <h2>About Us</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Family business">
+                    <img src="./assets/flatbed.jpg" alt="Asset recovery business">
                 </div>
                 <div class="about-text">
                     <h3>Family-Owned & Operated</h3>
@@ -156,18 +157,24 @@
 
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form id="contactForm">
+                    <!-- <form id="contactForm" action="https://formsubmit.co/nfaragency@outlook.com" method="POST"> -->
+                    <form id="contactForm" action="https://formsubmit.co/bradleymtreuherz@gmail.com" method="POST">
+    
+                        <input type="hidden" name="_subject" value="New contact request for NFAR">
+                        <input type="hidden" name="_template" value="table">
+                        <!-- TODO: Replace this with domain name -->
+                        <input type="hidden" name="_next" value="https://north-florida-asset-recovery.github.io/thank-you.html">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Your Phone">
+                            <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -180,9 +187,9 @@
     <section id="schedule" class="schedule">
         <div class="container">
             <h2>Schedule an Appointment</h2>
-            <p>Ready to schedule a service appointment? Contact us today and our team will be happy to assist you.</p>
-            <a href="tel:9046835330" class="btn">Call Now: 904-683-5330</a>
-            <a href="#contact" class="btn btn-outline">Contact Form</a>
+            <p>Ready to schedule a service appointment? Use our online scheduling system for quick and easy booking.</p>
+            <a href="https://scheduler.cleardata.io" target="_blank" class="btn">Schedule Online</a>
+            <a href="tel:9046835330" class="btn btn-outline">Or Call: 904-683-5330</a>
         </div>
     </section>
 
@@ -228,49 +235,6 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script>
-        // Mobile Navigation Toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('nav');
-
-        navToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a nav link
-        const navLinks = document.querySelectorAll('nav ul li a');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        });
-
-        // Back to Top Button
-        const backToTopButton = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('active');
-            } else {
-                backToTopButton.classList.remove('active');
-            }
-        });
-
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Form submission handling
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Here you would typically send the form data to a server
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
