@@ -43,6 +43,26 @@
             max-width: 600px;
             margin: 0 auto 30px;
         }
+        
+        /* Fix for mobile margin on thank you icon */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding-top: 120px;
+            }
+            .thank-you-icon {
+                margin-top: 20px;
+            }
+        }
+        
+        /* Additional padding for smaller screens */
+        @media (max-width: 480px) {
+            .thank-you-container {
+                padding-top: 140px;
+            }
+            .thank-you-icon {
+                margin-top: 30px;
+            }
+        }
     </style>
 </head>
 <body>
