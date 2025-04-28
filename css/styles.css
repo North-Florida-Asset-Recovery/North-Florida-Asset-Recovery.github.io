@@ -272,6 +272,31 @@ section h3 {
     padding: 10px 20px;
     border-radius: 30px;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.county:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #254b8f; /* Slightly lighter than primary color */
+}
+
+.county.active {
+    background-color: var(--secondary-color);
+}
+
+/* Make sure the counties stack nicely on mobile */
+@media (max-width: 480px) {
+    .counties {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .county {
+        width: 80%;
+        text-align: center;
+    }
 }
 
 /* About Us Section */
